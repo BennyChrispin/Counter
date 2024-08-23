@@ -1,0 +1,43 @@
+<div class="flex items-center justify-center text-center mt-24 mx-20">
+  <div
+    class="flex flex-col items-center justify-center space-y-6 p-8 bg-gray-100 rounded-lg shadow-lg"
+  >
+    <h1 class="text-3xl font-semibold text-gray-700">
+      Counter: {{ count$ | async }}
+    </h1>
+
+    <input
+      type="number"
+      [value]="(count$ | async) || 0"
+      (input)="onSetCount($event)"
+      class="border border-gray-400 rounded-lg px-3 py-2 w-24 text-center text-lg text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+    />
+
+    <div class="flex space-x-3">
+      <button
+        (click)="onIncrement()"
+        class="bg-indigo-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+      >
+        Increment
+      </button>
+      <button
+        (click)="onDecrement()"
+        class="bg-red-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
+      >
+        Decrement
+      </button>
+      <button
+        (click)="onReset()"
+        class="bg-yellow-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+      >
+        Reset
+      </button>
+      <button
+        (click)="onUndo()"
+        class="bg-teal-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-300"
+      >
+        Undo
+      </button>
+    </div>
+  </div>
+</div>
